@@ -20,4 +20,8 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!"""
-print(long_script)
+short1 = long_script[:98]
+short2 = long_script[98:196]
+short3 = long_script[196:]
+
+print(short1 + short2 + short3 )
