@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 for num in range(0,98):
-    print(f"{int(num)} = {hex(num)}")
+    print("{} = {}".format(int(num),hex(num)))
