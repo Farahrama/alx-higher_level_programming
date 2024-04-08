@@ -5,6 +5,6 @@ for i in range(26):
         alph += chr(122 - i)
     else:
         alph += chr(90 - i)
-print(alph)
+print("{}".format(alph))
     
 
