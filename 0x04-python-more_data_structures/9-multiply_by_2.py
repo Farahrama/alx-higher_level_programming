@@ -1,6 +1,18 @@
-#!/usr/bin/python3
-def multiply_by_2(a_dictionary):
-    result = {}
-    for key, value in a_dictionary.items():
-        result[key] = value * 2
-    return result
+from roman import fromRoman
+
+def roman_to_int(roman_string):
+  """
+  Converts a Roman numeral string to an integer using the roman library.
+
+  Args:
+      roman_string (str): The Roman numeral string.
+
+  Returns:
+      int: The integer equivalent of the Roman numeral.
+  """
+
+  try:
+    return fromRoman(roman_string)
+  except ValueError:  # Handle invalid Roman numeral input
+    print(f"Invalid Roman numeral: {roman_string}")
+    return None
