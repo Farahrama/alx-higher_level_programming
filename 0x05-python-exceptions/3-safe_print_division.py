@@ -8,7 +8,7 @@ def safe_print_division(a, b):
 
         return (None)
     finally:
-        if res != 0:
+        if res != 0.0:
             print("Inside result: {}".format(res))
         else:
             print("Inside result: {}".format(None))
