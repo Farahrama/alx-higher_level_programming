@@ -7,11 +7,11 @@
 100
 >>> add_integer(100.3, -2)
 98
->>> add_integer(4, hello)
+>>> add_integer(4, School)
 Traceback (most recent call last):
     ...
 TypeError: b must be integer
->>> add_integer(hello, 6)
+>>> add_integer(None)
 Traceback (most recent call last):
     ...
 TypeError: a must be integer
