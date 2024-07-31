@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import sys
 def add_integer(a, b=98):
     """
     Adds two integers or floats after converting them to integers.
@@ -22,8 +21,6 @@ def add_integer(a, b=98):
         a = int(a)
     if type(b) is float:
         b = int(b)
-    result = a + b
-    if result > sys.maxsize or result < -sys.maxsize - 1:
-        raise OverflowError("Input too large to convert to integer")
-    return result
+    
+
 
