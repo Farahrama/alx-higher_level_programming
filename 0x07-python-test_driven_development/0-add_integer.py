@@ -22,7 +22,9 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if isinstance(b, float) and (b != b):
         raise TypeError("b must be an integer")
-     if (a > 0 and b > 0 and a + b > sys.maxsize) or \
-     (a < 0 and b < 0 and a + b < sys.minsize):
-        raise OverflowError("Input too large to convert to integer"
+    try:
+        a = int(a)
+        b = int(b)
+    except OverflowError:
+        raise OverflowError("float overflow")
     return a + b
