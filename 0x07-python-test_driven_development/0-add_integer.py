@@ -22,7 +22,10 @@ def add_integer(a, b=98):
         a = int(a)
     if type(b) is float:
         b = int(b)
-    # Check for overflow in addition
-    if (a > 0 and b > 0 and a + b < 0) or (a < 0 and b < 0 and a + b > 0):
-        raise OverflowError("result is too large")
-    return a + b
+    try:
+        result = a + b
+        if result > sys.maxsize or result < -sys.maxsize - 1:
+            raise OverflowError("Input too large to convert to integer")
+    except OverflowError:
+        raise OverflowError("Input too large to convert to integer")
+    return result
