@@ -22,4 +22,6 @@ def add_integer(a, b=98):
         a = int(a)
     if type(b) is float:
         b = int(b)
+    if (a > 0 and b > 0 and a + b < 0) or (a < 0 and b < 0 and a + b > 0):
+        raise OverflowError("result is too large")
     return a + b
