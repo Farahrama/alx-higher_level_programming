@@ -1,0 +1,23 @@
+import function from modules:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+Test normal matrix:
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 2)
+    [[0.5, 1, 1.5], [2, 2.5, 3]]
+Test division by zero:
+    >>> matrix_divided([[2, 6, 8], [4, 12, 16]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Test one el:
+    >>> matrix_divided([[4]], 2)
+    [[2]]
+Test division by negative:
+    >>> matrix_divided([[12, 6, 20], [30, 60, 10]], -2)
+    [[-6, -3, -10], [-15, -30, -5]]
+Test matrix with non number
+    >>> matrix_divided([[2, 4, 8], [1, "foo", 3]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
