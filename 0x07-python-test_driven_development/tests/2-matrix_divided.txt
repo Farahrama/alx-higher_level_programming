@@ -21,3 +21,4 @@ Test matrix with non number
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+
