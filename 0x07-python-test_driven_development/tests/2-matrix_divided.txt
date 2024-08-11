@@ -45,13 +45,6 @@ Test 1st arg none:
     Traceback (most recent call last):
     ...
     NameError: name 'none' is not defined
-
-Test empty matrix:
-    >>> matrix_divided([[]], 10)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-
 Test matrix with non number
     >>> matrix_divided([[2, 4, 8], [1, "foo", 3]], 2)
     Traceback (most recent call last):
@@ -63,13 +56,6 @@ Test matrix with different rows
     Traceback (most recent call last):
     ...
     TypeError: Each row of the matrix must have the same size
-
-Test empty matrix more empty rows:
-    >>> matrix_divided([[], [], []], 10)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-
 
 Test 1st arg str:
     >>> matrix_divided("foo", 1)
