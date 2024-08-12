@@ -1,7 +1,7 @@
 Import function from module:
 >>> say_my_name = __import__(3-say_my_name).say_my_name
 Test two string:
-    >>> say_my_name(farah, ramadan)
+    >>> say_my_name("farah", "ramadan")
     farah ramadan
 Test if last_name equal None:
     >>> say_my_name("farah", None)
@@ -9,17 +9,17 @@ Test if last_name equal None:
     ...
     TypeError: last_name must be a string
 Test if first_name equal None:
-    >>> say_my_name(None, ramadan)
+    >>> say_my_name(None, "ramadan")
     Traceback(most recent call last)
     ...
     TypeError: first_name must be a string
 Test if first_name not string:
-    >>> say_my_name(2, ramadan)
+    >>> say_my_name(2, "ramadan")
     Traceback(most recent call last)
     ...
     TypeError: first_name must be a string
 Test if last_name not string:
-   >>> say_my_name(farah, 8)
+   >>> say_my_name("farah", 8)
    Traceback(most recent call last)
    ...
    TypeError: last_name must be a string
