@@ -2,7 +2,7 @@ Import function from module:
 >>> say_my_name = __import__("3-say_my_name").say_my_name
 Test two string:
     >>> say_my_name("farah", "ramadan")
-    farah ramadan
+    My name is farah ramadan
 Test if last_name equal None:
     >>> say_my_name("farah", None)
     Traceback (most recent call last):
