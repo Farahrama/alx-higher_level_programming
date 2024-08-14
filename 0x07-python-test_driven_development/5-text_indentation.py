@@ -5,18 +5,21 @@ def text_indentation(text):
     """function that prints a text with 2 new lines after each of these characters: ., ? and :"""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    word = ""
+    result = ""
     for char in text:
-        word += char
-        if char in [".", "?", ":"]:
-            word = word.strip()
-            print(word + "\n")
-            word = ""
-    if word.strip():
-        print(word.strip())
+        result += char
+        if char in ".?:":
+            print(result.strip() + "\n")
+            result = ""
+    if result.strip():
+        print(result.strip())
 
 
 if __name__ == '__main__':
     import doctest
     doctest.testfile('tests/5-text_indentation.txt')
+
+
+
+
 
