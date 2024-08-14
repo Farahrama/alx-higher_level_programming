@@ -26,7 +26,5 @@ def text_indentation(text):
                 print(char, end="")
 
 
-
-# Example usage
 if __name__ == "__main__":
     text_indentation("Holberton. School? How are you: John")
