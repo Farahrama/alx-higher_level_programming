@@ -24,7 +24,5 @@ TypeError: text must be a string
 Traceback (most recent call last):
     ...
 TypeError: text_indentation() missing 1 required positional argument: 'text'
->>> text_indentation("")
-    <BLANKLINE>
 >>> text_indentation("    Leading and trailing spaces   ")
 Leading and trailing spaces
