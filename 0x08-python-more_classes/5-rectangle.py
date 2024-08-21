@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""class Rectangle that defines a rectangle by: (based on 3-rectangle.py)"""
+"""class Rectangle that defines a rectangle by: (based on 4-rectangle.py)"""
 
 
 class Rectangle:
@@ -47,3 +47,6 @@ class Rectangle:
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        print("Bye rectangle...")
