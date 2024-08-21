@@ -49,6 +49,7 @@ class Rectangle:
             return ""
         line = str(self.print_symbol) * self.__width
         return "\n".join([line] * self.__height)
+
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
 
