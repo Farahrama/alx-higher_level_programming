@@ -1,5 +1,5 @@
-Import function from Module:
->>> My_list = __import__('1-my_list').My_list
+Import the class:
+>>> Mylist = __import__('1-my_list').Mylist
 regular test:
 >>> my_list = MyList()
 >>> []
@@ -15,10 +15,10 @@ regular test:
 >>> my_list.print_sorted()
 >>> my_list
 >>> [1, 2, 3, 4, 5]
->>> my_list= My_list([1, 7, 8])
+>>> my_list= Mylist([1, 7, 8])
 >>> my_list
 >>> [1, 7, 8]
 
->>> my_list = My_list(['A', 'L', 'X'])
+>>> my_list = Mylist(['A', 'L', 'X'])
 >>> my_list.print_sorted
 >>> ['A', 'L', 'X']
