@@ -12,42 +12,42 @@ ValueError: age must be greater than 0
 Traceback (most recent call last):
    ...
 TypeError: age must be an integer
->>> geo.integer_validator(“name”, “John”)
+>>> geo.integer_validator("name", "John")
 Traceback (most recent call last):
    ...
 TypeError: name must be an integer
 
->>> geo.integer_validator(“age”)
+>>> geo.integer_validator("age")
 Traceback (most recent call last):
    ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> geo.integer_validator(“age”, “4”)
+>>> geo.integer_validator("age", "4")
 Traceback (most recent call last):
    ...
 TypeError: age must be an integer
 
->>> geo.integer_validator(“age”, (4,))
+>>> geo.integer_validator("age", (4,))
 Traceback (most recent call last):
    ...
 TypeError: age must be an integer
 
->>> geo.integer_validator(“age”, [3])
+>>> geo.integer_validator("age", [3])
 Traceback (most recent call last):
    ...
 TypeError: age must be an integer
 
->>> geo.integer_validator(“age”, True)
+>>> geo.integer_validator("age", True)
 Traceback (most recent call last):
    ...
 TypeError: age must be an integer
 
->>> geo.integer_validator(“age”, {3, 4})
+>>> geo.integer_validator("age", {3, 4})
 Traceback (most recent call last):
    ...
 TypeError: age must be an integer
 
->>> geo.integer_validator(“age”, None)
+>>> geo.integer_validator("age", None)
 Traceback (most recent call last):
    ...
 TypeError: age must be an integer
