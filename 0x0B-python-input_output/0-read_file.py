@@ -8,4 +8,5 @@ def read_file(filename=""):
         with open(filename, encoding="UTF8") as file:
             print(file.read(), end="")
     except FileNotFoundError:
-        print(f"[FileNotFoundError] [Errno 2] No such file or directory: 'file_nop'")
+        print(f"[FileNotFoundError] [Errno 2] No such file or directory: "
+              f"'file_nop'")
