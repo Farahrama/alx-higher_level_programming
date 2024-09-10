@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """function that returns the number of characters written:"""
+
+
 def write_file(filename="", text=""):
     """returns the number of characters written:"""
     try:
