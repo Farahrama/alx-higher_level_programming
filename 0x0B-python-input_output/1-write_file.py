@@ -4,8 +4,7 @@ def write_file(filename="", text=""):
     """returns the number of characters written:"""
     try:
         with open(filename, "w", encoding="UTF8") as file:
-            print(file.write(text), end="")
-            return(len(text))
+            return file.write(text)
     except FileNotFoundError:
         print(f"[FileNotFoundError] [Errno 2] No such file or directory: "
               f"'file_nop'")
