@@ -103,3 +103,13 @@ class Rectangle(Base):
             self.__x = args[3]
         if len(args) > 4:
             self.__y = args[4]
+
+    def to_dictionary(self):
+        dict_rectangle= {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height, 
+            'x': self.x,
+            'y': self.y
+            }
+        return dict_rectangle
