@@ -28,6 +28,8 @@ class Base():
         if list_objs is None or len(list_objs) <= 0:
             list_objs = []
         dicts = [obj.to_dictionary() for obj in list_objs]
-        json_string = cls.to_json_string(dicts)        
+        json_string = cls.to_json_string(dicts)
         with open("Rectangle.json", "w") as file:
+            file.write(json_string)
+        with open("Square.json", "w") as file:
             file.write(json_string)
