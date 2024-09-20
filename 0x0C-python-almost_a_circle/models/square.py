@@ -26,6 +26,7 @@ class Square(Rectangle):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     def update(self, *args, **kwargs):
+        """that assigns attributes"""
         if args is None or len(args) == 0:
             for key, value in kwargs.items():
                 if key == "id":
