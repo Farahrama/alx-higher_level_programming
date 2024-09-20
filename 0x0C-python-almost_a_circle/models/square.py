@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ class Square that inherits from Rectangle"""
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -45,3 +45,12 @@ class Square(Rectangle):
             self.x = args[2]
         if len(args) > 3:
             self.y = args[3]
+
+    def to_dictionary(self):
+        square_dict = {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
+        return square_dict
