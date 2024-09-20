@@ -30,7 +30,7 @@ class Square(Rectangle):
         if args is None or len(args) <= 0:
             for key, value in kwargs.items():
                 if key == "id":
-                    self.id == value
+                    self.id = value
                 if key == "size":
                     self.size = value
                 if key == "x":
