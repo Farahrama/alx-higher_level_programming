@@ -33,3 +33,11 @@ class Base():
             file.write(json_string)
         with open("Square.json", "w") as file:
             file.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+        if json_string is None or len(json_string) <= 0:
+            return []
+        json_rep = json.loads(json_string)
+        return json_rep
