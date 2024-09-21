@@ -47,7 +47,7 @@ class Base():
         from models.rectangle import Rectangle
         from models.square import Square
         """returns an instance with all attributes already set"""
-        r1 = Rectangle(2, 4, 6)
+        r1 = Rectangle(2, 4, 6, 7)
         if "id" in dictionary:
             r1.update(**dictionary)
         if "width" in dictionary:
@@ -57,5 +57,7 @@ class Base():
         if "x" in dictionary:
             r1.update(**dictionary)
         if "y" in dictionary:
+            r1.update(**dictionary)
+        if "size" in dictionary:
             r1.update(**dictionary)
         return r1
