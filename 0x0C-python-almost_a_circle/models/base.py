@@ -47,17 +47,9 @@ class Base():
         from models.rectangle import Rectangle
         from models.square import Square
         """returns an instance with all attributes already set"""
-        r1 = Rectangle(2, 4, 6, 7)
-        if "id" in dictionary:
-            r1.update(**dictionary)
-        if "width" in dictionary:
-            r1.update(**dictionary)
-        if "height" in dictionary:
-            r1.update(**dictionary)
-        if "x" in dictionary:
-            r1.update(**dictionary)
-        if "y" in dictionary:
-            r1.update(**dictionary)
-        if "size" in dictionary:
-            r1.update(**dictionary)
-        return r1
+        if cls.__name__ == "Rectangle":
+           obj = cls(1, 1)
+        if cls.__name__ == "Square":
+            obj = cls(1)
+        obj.update(**dictionary)
+        return(obj)
