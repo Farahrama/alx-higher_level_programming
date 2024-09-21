@@ -41,3 +41,21 @@ class Base():
             return []
         json_rep = json.loads(json_string)
         return json_rep
+
+    @classmethod
+    def create(cls, **dictionary):
+        from models.rectangle import Rectangle
+        from models.square import Square
+        """returns an instance with all attributes already set"""
+        r1 = Rectangle(2, 4, 6)
+        if "id" in dictionary:
+            r1.update(**dictionary)
+        if "width" in dictionary:
+            r1.update(**dictionary)
+        if "height" in dictionary:
+            r1.update(**dictionary)
+        if "x" in dictionary:
+            r1.update(**dictionary)
+        if "y" in dictionary:
+            r1.update(**dictionary)
+        return r1
