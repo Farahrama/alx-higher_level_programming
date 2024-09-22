@@ -57,11 +57,11 @@ class Base():
     @classmethod
     def load_from_file(cls):
         """that returns a list of instances:"""
-        try: 
+        try:
             with open("Rectangle.json", "r") as file:
                 json_string = file.read()
                 dict = cls.from_json_string(json_string)
         except FileNotFoundError:
             return []
-        list_of_instance = [cls.create(**i) for i in dict ]
+        list_of_instance = [cls.create(**i) for i in dict]
         return list_of_instance
