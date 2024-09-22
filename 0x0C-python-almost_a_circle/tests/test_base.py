@@ -12,11 +12,11 @@ class TestBase(unittest.TestCase):
     def test_id_manual_assignment(self):
         base = Base(50)
         self.assertEqual(base.id, 50)
-    def to_json_string_None_list(self):
+    def test_to_json_string_None_list(self):
         self.assertEqual(Base.to_json_string(None), "[]")
-    def to_json_string_empty_list(self):
+    def test_to_json_string_empty_list(self):
         self.assertEqual(Base.to_json_string([]), "[]")
-    def to_json_string_valid(self):
+    def test_to_json_string_valid(self):
         dictionary = [{"id": 12}]
-        self.assertEqual(Base.to_json_string(dictionary), [{"id": 12}])
+        self.assertEqual(Base.to_json_string(dictionary), '[{"id": 12}]')
     
