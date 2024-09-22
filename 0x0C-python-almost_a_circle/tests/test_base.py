@@ -19,3 +19,4 @@ class TestBase(unittest.TestCase):
     def to_json_string_valid(self):
         dictionary = [{"id": 12}]
         self.assertEqual(Base.to_json_string(dictionary), [{"id": 12}])
+    
