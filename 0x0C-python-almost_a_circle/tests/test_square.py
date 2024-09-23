@@ -3,7 +3,6 @@ from models.square import Square
 import unittest
 
 
-
 class Testsquare(unittest.TestCase):
 
     def test_size_initialization(self):
@@ -37,20 +36,23 @@ class Testsquare(unittest.TestCase):
     def test_to_dictionary(self):
         square = Square(8, 16, 5, 6)
         expected_dictionary = {
-            "id": 6,
-            "size": 8,
-            "x": 16,
-            "y": 5
+            'id': 6,
+            'size': 8,
+            'x': 16,
+            'y': 5
         }
         self.assertEqual(square.to_dictionary(), expected_dictionary)
     def test_update(self):
         square = Square(8, 16, 5, 6)
-        square.update(1, 1, 16, 5)
+        square.update(1, 1, 5, 6)
         exepect_update = {
-            "id": 1,
-            "size": 1,
-            "x": 16,
-            "y": 5
+            'id': 6,
+            'size': 1,
+            'x': 1,
+            'y': 5
         }
         self.assertEqual(square.to_dictionary, exepect_update)
+
+if __name__ == "__main__":
+    unittest.main()
     
