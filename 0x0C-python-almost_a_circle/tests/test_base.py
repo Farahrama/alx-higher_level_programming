@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import unittest
-from models import base
-Base = base.Base
+from models.base import Base
 
 
 class TestBase(unittest.TestCase):
@@ -20,4 +19,5 @@ class TestBase(unittest.TestCase):
     def test_to_json_string_valid(self):
         dictionary = [{"id": 12}]
         self.assertEqual(Base.to_json_string(dictionary), '[{"id": 12}]')
-    
+if __name__ == "__main__":
+    unittest.main()
