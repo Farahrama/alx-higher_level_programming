@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 from models.square import Square
+from models.rectangle import Rectangle
+from models.base import Base
 import unittest
 
 
@@ -21,18 +23,18 @@ class Testsquare(unittest.TestCase):
         init = Square(1, 2, 3, 4)
         self.assertEqual((init.size, init.x, init.y, init.id), (1, 2, 3, 4))
     def test_negative_x(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Square(1, -2)
     def test_negative_y(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(ValueError):
             Square(1, 2, -3)
     def test_zero_size(self):
         with self.assertRaises(ValueError):
             Square(0)
     def test_str_method(self):
-        Square(5, 4, 3, 2)
+        square = Square(5, 4, 3, 2)
         exepted_str = "[Square] (2) 4/3 - 5"
-        self.assertEqual(str(Square), exepted_str)
+        self.assertEqual(str(square), exepted_str)
     def test_to_dictionary(self):
         square = Square(8, 16, 5, 6)
         expected_dictionary = {
@@ -44,14 +46,14 @@ class Testsquare(unittest.TestCase):
         self.assertEqual(square.to_dictionary(), expected_dictionary)
     def test_update(self):
         square = Square(8, 16, 5, 6)
-        square.update(1, 1, 5, 6)
+        square.update(6, 1, 1, 5)
         exepect_update = {
             'id': 6,
             'size': 1,
             'x': 1,
             'y': 5
         }
-        self.assertEqual(square.to_dictionary, exepect_update)
+        self.assertEqual(square.to_dictionary(), exepect_update)
 
 if __name__ == "__main__":
     unittest.main()
