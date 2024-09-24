@@ -19,5 +19,14 @@ class TestBase(unittest.TestCase):
     def test_to_json_string_valid(self):
         dictionary = [{"id": 12}]
         self.assertEqual(Base.to_json_string(dictionary), '[{"id": 12}]')
+    def test_from_json_string_None(self):
+        self.assertEqual(Base.from_json_string(None), [])
+    def test_from_json_string_empty_list(self):
+        dictionary = []
+        self.assertEqual(Base.from_json_string(dictionary), [])
+    def test_from_json_string_normaltest(self):
+        dictionary = [{"id": 12}]
+        dict = '[{"id": 12}]'
+        self.assertEqual(Base.from_json_string(dict), dictionary)
 if __name__ == "__main__":
     unittest.main()
