@@ -5,6 +5,8 @@ from models.base import Base
 from models.square import Square
 from unittest.mock import patch
 from io import StringIO
+import os
+import json
 
 
 class TestRectangle(unittest.TestCase):
@@ -188,8 +190,62 @@ class TestRectangle(unittest.TestCase):
             'y': 4
             }
         self.assertEqual(rectangle.to_dictionary(), dict_rectangle)
-    
-        
-        
+    def test_create_id(self):
+        rectangle = Rectangle(1, 2, 3)
+        rectangle.update(**{ 'id': 89 })
+        r_dict = rectangle.to_dictionary()
+        r2 = rectangle.create(**r_dict)
+        self.assertIsInstance(r2, Rectangle)
+    def test_create_width(self):
+        rectangle = Rectangle(1, 2, 3)
+        rectangle.update(**{ 'id': 89, 'width': 1 })
+        r_dict = rectangle.to_dictionary()
+        r2 = rectangle.create(**r_dict)
+        self.assertIsInstance(r2, Rectangle)
+    def test_create_height(self):
+        rectangle = Rectangle(1, 2, 3)
+        rectangle.update(**{ 'id': 89, 'width': 1, 'height': 2 })
+        r_dict = rectangle.to_dictionary()
+        r2 = rectangle.create(**r_dict)
+        self.assertIsInstance(r2, Rectangle)
+    def test_create_x(self):
+        rectangle = Rectangle(1, 2, 3)
+        rectangle.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+        r_dict = rectangle.to_dictionary()
+        r2 = rectangle.create(**r_dict)
+        self.assertIsInstance(r2, Rectangle)
+    def test_create_y(self):
+        rectangle = Rectangle(1, 2, 3)
+        rectangle.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        r_dict = rectangle.to_dictionary()
+        r2 = rectangle.create(**r_dict)
+        self.assertIsInstance(r2, Rectangle)
+    def test_save_to_file(self):
+        Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as file:
+            content = file.read()
+            self.assertEqual(content, '[]')
+    def test_save_to_file_empty(self):
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as file:
+            content = file.read()
+            self.assertEqual(content, '[]')
+    def test_save_to_width_height(self):
+        rectangle = Rectangle(1, 2)
+        Rectangle.save_to_file([rectangle])
+        with open("Rectangle.json", "r") as file:
+            content = file.read()
+            list = json.loads(content)
+            self.assertEqual(list, [rectangle.to_dictionary()])
+    def test_load_from_json(self):
+        rectangle = Rectangle(1, 2)
+        Rectangle.save_to_file([rectangle])
+        loaded_rectangle = Rectangle.load_from_file()
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        self.assertIsInstance(loaded_rectangle, list)
+        self.assertEqual(len(loaded_rectangle), 1)
+        self.assertEqual(loaded_rectangle[0].to_dictionary(), rectangle.to_dictionary(),os.remove("Rectangle.json") )
 if __name__ == '__main__':
     unittest.main()
