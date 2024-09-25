@@ -231,7 +231,7 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(os.path.exists("Rectangle.json"))
         with open("Rectangle.json", "r") as file:
             content = file.read()
-            self.assertEqual(content, '[]')
+            self.assertEqual(content, "[]")
     def test_save_to_width_height(self):
         rectangle = Rectangle(1, 2)
         Rectangle.save_to_file([rectangle])
