@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 import unittest
 from models.base import Base
+from models.square import Square
+from models.rectangle import Rectangle
+from unittest.mock import patch
+from io import StringIO
+import os
+import json
 
 
 class TestBase(unittest.TestCase):
@@ -28,5 +34,18 @@ class TestBase(unittest.TestCase):
         dictionary = [{"id": 12}]
         dict = '[{"id": 12}]'
         self.assertEqual(Base.from_json_string(dict), dictionary)
+    def test_save_to_file_empty(self):
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as file:
+            content = file.read()
+            self.assertEqual(content, "[]")
+    def test_save_to_file_empty(self):
+        Square.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as file:
+            content = file.read()
+            self.assertEqual(content, "[]")
+            
 if __name__ == "__main__":
     unittest.main()
